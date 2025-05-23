@@ -1,0 +1,44 @@
+{
+  "name": "rspress-plugin-font-figtree",
+  "description": "Use Figtree as the default font in your Rspress website.",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Andrew MacCuaig <andrewmaccuaig@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maccuaa/rspress-plugin-font-figtree.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maccuaa/rspress-plugin-font-figtree/issues"
+  },
+  "homepage": "https://github.com/maccuaa/rspress-plugin-font-figtree#readme",
+  "keywords": ["rspress", "plugin", "fonts", "figtree"],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "rslib build",
+    "bump": "npx bumpp",
+    "dev": "rslib build --watch",
+    "lint": "biome ci .",
+    "prepare": "npm run build"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@rslib/core": "0.8.0",
+    "@rspress/shared": "1.44.0",
+    "@tsconfig/node-lts": "22.0.1",
+    "@types/node": "22.15.21",
+    "typescript": "5.8.3"
+  }
+}

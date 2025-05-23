@@ -24,7 +24,8 @@ jobs:
       - name: Publish to NPM
         env:
           NPM_CONFIG_TOKEN: ${{ secrets.RSBUILD_PLUGIN_NPM_TOKEN }}
-        run: npm publish --provenance --access public
+        # run: npm publish --provenance --access public
+        run: npm publish --access public
       - name: Create GitHub Release
         uses: ncipollo/release-action@v1
         with:

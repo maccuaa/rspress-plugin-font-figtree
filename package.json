@@ -1,7 +1,7 @@
 {
   "name": "rspress-plugin-font-figtree",
   "description": "Use Figtree as the default font in your Rspress website.",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "author": "Andrew MacCuaig <andrewmaccuaig@gmail.com>",
   "repository": {

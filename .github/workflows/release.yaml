@@ -1,44 +1,30 @@
-# This action will publish the package to npm and create a GitHub release.
 name: Release
-
 on:
-  # Run `npm run bump` to bump the version and create a git tag.
   push:
     tags:
       - "v*"
-
-  workflow_dispatch:
-
-permissions:
-  contents: write
-  id-token: write
-
 jobs:
-  publish:
+  build:
+    name: Publish
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Install Bun
-        uses: oven-sh/setup-bun@v2
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      - uses: oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76 # v2
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: "lts/*"
-
+          registry-url: "https://registry.npmjs.org"
       - name: Install Dependencies
-        run: bun install --frozen-lockfile
-
-      - name: Lint
-        run: bun run lint
-
-      - name: Publish
-        uses: JS-DevTools/npm-publish@v3
-        with:
-          token: ${{ secrets.RSBUILD_PLUGIN_NPM_TOKEN }}
-
+        run: bun i --frozen-lockfile
+      - name: Build Package
+        run: bun run build
+      - name: Publish to NPM
+        env:
+          NPM_CONFIG_TOKEN: ${{ secrets.RSBUILD_PLUGIN_NPM_TOKEN }}
+        run: npm publish --provenance --access public
       - name: Create GitHub Release
         uses: ncipollo/release-action@v1
         with:

@@ -28,10 +28,9 @@
   "files": ["dist"],
   "scripts": {
     "build": "rslib build",
-    "bump": "npx bumpp",
+    "bump": "bunx bumpp",
     "dev": "rslib build --watch",
-    "lint": "biome ci .",
-    "prepare": "npm run build"
+    "lint": "biome ci ."
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",

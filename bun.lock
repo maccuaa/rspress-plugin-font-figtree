@@ -3,6 +3,9 @@
   "workspaces": {
     "": {
       "name": "rspress-plugin-font-figtree",
+      "dependencies": {
+        "@fontsource/figtree": "^5.2.8",
+      },
       "devDependencies": {
         "@biomejs/biome": "1.9.4",
         "@rslib/core": "0.8.0",
@@ -51,6 +54,8 @@
     "@biomejs/cli-win32-arm64": ["@biomejs/cli-win32-arm64@1.9.4", "", { "os": "win32", "cpu": "arm64" }, "sha512-tlbhLk+WXZmgwoIKwHIHEBZUwxml7bRJgk0X2sPyNR3S93cdRq6XulAZRQJ17FYGGzWne0fgrXBKpl7l4M87Hg=="],
 
     "@biomejs/cli-win32-x64": ["@biomejs/cli-win32-x64@1.9.4", "", { "os": "win32", "cpu": "x64" }, "sha512-8Y5wMhVIPaWe6jw2H+KlEm4wP/f7EW3810ZLmDlrEEy5KvBsb9ECEfu/kMWD484ijfQ8+nIi0giMgu9g1UAuuA=="],
+
+    "@fontsource/figtree": ["@fontsource/figtree@5.2.8", "", {}, "sha512-FC+t9RSdZDUK402+h+D7kKBXEo1L5xw/ff8SpTo9ZO0xHzqFJ0u78PmNyAju5D77oXPsR3wfs+rjZvWPx4diSA=="],
 
     "@jridgewell/sourcemap-codec": ["@jridgewell/sourcemap-codec@1.5.0", "", {}, "sha512-gv3ZRaISU3fjPAgNsriBRqGWQL6quFx04YMPW/zD8XMLsU32mhCCbfbO6KZFLjvYpCZ8zyDEgqsgf+PwPaM7GQ=="],
 

@@ -1,5 +1,9 @@
-import path from "node:path";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import type { RspressPlugin } from "@rspress/shared";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export const pluginFontFigtree = (): RspressPlugin => {
   return {
@@ -7,7 +11,7 @@ export const pluginFontFigtree = (): RspressPlugin => {
     builderConfig: {
       source: {
         preEntry: [
-          path.join(
+          join(
             __dirname,
             "..",
             "node_modules",

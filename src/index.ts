@@ -11,7 +11,14 @@ export const pluginFontFigtree = (): RspressPlugin => {
     builderConfig: {
       source: {
         preEntry: [
-          join(__dirname, "..", "..", "@fontsource", "figtree", "index.css"),
+          join(
+            __dirname,
+            "..",
+            "..",
+            "@fontsource-variable",
+            "figtree",
+            "index.css",
+          ),
           join(__dirname, "..", "static", "figtree.css"),
         ],
       },

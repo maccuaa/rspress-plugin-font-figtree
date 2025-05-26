@@ -31,6 +31,9 @@
     "dev": "rslib build --watch",
     "lint": "biome ci ."
   },
+  "dependencies": {
+    "@fontsource-variable/figtree": "^5.2.8"
+  },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@rslib/core": "0.8.0",
@@ -38,8 +41,5 @@
     "@tsconfig/node-lts": "22.0.1",
     "@types/node": "22.15.21",
     "typescript": "5.8.3"
-  },
-  "dependencies": {
-    "@fontsource/figtree": "^5.2.8"
   }
 }

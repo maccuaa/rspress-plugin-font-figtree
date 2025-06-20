@@ -12,7 +12,12 @@
     "url": "https://github.com/maccuaa/rspress-plugin-font-figtree/issues"
   },
   "homepage": "https://github.com/maccuaa/rspress-plugin-font-figtree#readme",
-  "keywords": ["rspress", "plugin", "fonts", "figtree"],
+  "keywords": [
+    "rspress",
+    "plugin",
+    "fonts",
+    "figtree"
+  ],
   "type": "module",
   "exports": {
     ".": {
@@ -24,7 +29,10 @@
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": ["dist", "static"],
+  "files": [
+    "dist",
+    "static"
+  ],
   "scripts": {
     "build": "rslib build",
     "bump": "bunx bumpp",
@@ -35,7 +43,7 @@
     "@fontsource-variable/figtree": "^5.2.8"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "2.0.0",
     "@rslib/core": "0.10.0",
     "@rspress/shared": "1.44.0",
     "@tsconfig/node-lts": "22.0.1",

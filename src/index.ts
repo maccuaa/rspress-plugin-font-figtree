@@ -26,7 +26,7 @@ export const pluginFontFigtree = (): RspressPlugin => {
         // Preload fonts to avoid flickering caused by fonts swap
         preload: {
           type: "all-chunks",
-          include: [/figtree\-.*\.woff2?/],
+          include: [/figtree-.*\.woff2?/],
         },
       },
     },

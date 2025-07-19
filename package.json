@@ -45,7 +45,7 @@
   "devDependencies": {
     "@biomejs/biome": "2.1.1",
     "@rslib/core": "0.10.6",
-    "@rspress/shared": "1.44.0",
+    "@rspress/shared": "1.45.0",
     "@tsconfig/node-lts": "22.0.2",
     "@types/node": "24.0.14",
     "typescript": "5.8.3"

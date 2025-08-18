@@ -8,7 +8,7 @@
       },
       "devDependencies": {
         "@biomejs/biome": "2.2.0",
-        "@rslib/core": "0.12.0",
+        "@rslib/core": "0.12.1",
         "@rspress/shared": "1.45.1",
         "@tsconfig/node-lts": "22.0.2",
         "@types/node": "24.2.1",
@@ -79,9 +79,9 @@
 
     "@napi-rs/wasm-runtime": ["@napi-rs/wasm-runtime@1.0.1", "", { "dependencies": { "@emnapi/core": "^1.4.5", "@emnapi/runtime": "^1.4.5", "@tybys/wasm-util": "^0.10.0" } }, "sha512-KVlQ/jgywZpixGCKMNwxStmmbYEMyokZpCf2YuIChhfJA2uqfAKNEM8INz7zzTo55iEXfBhIIs3VqYyqzDLj8g=="],
 
-    "@rsbuild/core": ["@rsbuild/core@1.5.0-beta.0", "", { "dependencies": { "@rspack/core": "1.5.0-beta.0", "@rspack/lite-tapable": "~1.0.1", "@swc/helpers": "^0.5.17", "core-js": "~3.45.0", "jiti": "^2.5.1" }, "bin": { "rsbuild": "bin/rsbuild.js" } }, "sha512-X4PMkw/scc1gR3CGpWkvLvT1ZbjXug/n9a5dHPvNev1pqnG0uQsGjmw1+QWstlnLL3kvL5/kUY+fbemnE1hkeQ=="],
+    "@rsbuild/core": ["@rsbuild/core@1.5.0-beta.3", "", { "dependencies": { "@rspack/core": "1.5.0-beta.0", "@rspack/lite-tapable": "~1.0.1", "@swc/helpers": "^0.5.17", "core-js": "~3.45.0", "jiti": "^2.5.1" }, "bin": { "rsbuild": "bin/rsbuild.js" } }, "sha512-b4QOPQJvmhJFIWqBZ6kI7XLI3d1qx52ASpEzBoL5cnRnfh8tCMymWi9I0xUZinRmAh9V4wdIRG8EtISe899CcA=="],
 
-    "@rslib/core": ["@rslib/core@0.12.0", "", { "dependencies": { "@rsbuild/core": "1.5.0-beta.0", "rsbuild-plugin-dts": "0.12.0", "tinyglobby": "^0.2.14" }, "peerDependencies": { "@microsoft/api-extractor": "^7", "typescript": "^5" }, "optionalPeers": ["@microsoft/api-extractor", "typescript"], "bin": { "rslib": "bin/rslib.js" } }, "sha512-g5+KIJ+lwGvxff/3trRC4fhjkphDS7iWJoTLGf77xl8dvPfjhmtfoOzFwaeRQ2xs5YpafuE2scBA8G4tdaBgmA=="],
+    "@rslib/core": ["@rslib/core@0.12.1", "", { "dependencies": { "@rsbuild/core": "1.5.0-beta.3", "rsbuild-plugin-dts": "0.12.1", "tinyglobby": "^0.2.14" }, "peerDependencies": { "@microsoft/api-extractor": "^7", "typescript": "^5" }, "optionalPeers": ["@microsoft/api-extractor", "typescript"], "bin": { "rslib": "bin/rslib.js" } }, "sha512-ualcmPkgBk1/IgapJ/GN5wWfl0zjH++3Wpe7f8990NzM4zk5MS9JVqDjV9oljCtf/N8Va5YDC4pEULzVES7xYQ=="],
 
     "@rspack/binding": ["@rspack/binding@1.5.0-beta.0", "", { "optionalDependencies": { "@rspack/binding-darwin-arm64": "1.5.0-beta.0", "@rspack/binding-darwin-x64": "1.5.0-beta.0", "@rspack/binding-linux-arm64-gnu": "1.5.0-beta.0", "@rspack/binding-linux-arm64-musl": "1.5.0-beta.0", "@rspack/binding-linux-x64-gnu": "1.5.0-beta.0", "@rspack/binding-linux-x64-musl": "1.5.0-beta.0", "@rspack/binding-wasm32-wasi": "1.5.0-beta.0", "@rspack/binding-win32-arm64-msvc": "1.5.0-beta.0", "@rspack/binding-win32-ia32-msvc": "1.5.0-beta.0", "@rspack/binding-win32-x64-msvc": "1.5.0-beta.0" } }, "sha512-MzzSb/Ruq2fPBUfuhbezhD4V7Pg28n3otRZ7uNmeWfpvce3FtsJyyds92r99+rxwlb0Md31Zdj/NLJtpyFWBLA=="],
 
@@ -163,7 +163,7 @@
 
     "picomatch": ["picomatch@4.0.2", "", {}, "sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg=="],
 
-    "rsbuild-plugin-dts": ["rsbuild-plugin-dts@0.12.0", "", { "dependencies": { "@ast-grep/napi": "0.37.0", "magic-string": "^0.30.17", "picocolors": "1.1.1", "tinyglobby": "^0.2.14", "tsconfig-paths": "^4.2.0" }, "peerDependencies": { "@microsoft/api-extractor": "^7", "@rsbuild/core": "1.x", "typescript": "^5" }, "optionalPeers": ["@microsoft/api-extractor", "typescript"] }, "sha512-5kLjgjWaFnkjRB4p/wglCGZALUtJ1zCKpTM/6T3eQhrfU24cjCwBqr8/kNXjsP4ESP1LfjxWj+H0Rsl7oT5ncA=="],
+    "rsbuild-plugin-dts": ["rsbuild-plugin-dts@0.12.1", "", { "dependencies": { "@ast-grep/napi": "0.37.0", "magic-string": "^0.30.17", "picocolors": "1.1.1", "tinyglobby": "^0.2.14", "tsconfig-paths": "^4.2.0" }, "peerDependencies": { "@microsoft/api-extractor": "^7", "@rsbuild/core": "1.x", "typescript": "^5" }, "optionalPeers": ["@microsoft/api-extractor", "typescript"] }, "sha512-NXY04mekD3e1FzRKxcP5c8/idjWcnNyDcdXh4VcF10F7UxsgqT/rIOV8FT1aT+JjFncAD2mXboPq20wkqJTiIw=="],
 
     "section-matter": ["section-matter@1.0.0", "", { "dependencies": { "extend-shallow": "^2.0.1", "kind-of": "^6.0.0" } }, "sha512-vfD3pmTzGpufjScBh50YHKzEu2lxBWhVEHsNGoEXmCmn2hKGfeNLYMzCJpe8cD7gqX7TJluOVpBkAequ6dgMmA=="],
 

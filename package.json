@@ -48,6 +48,6 @@
     "@rspress/shared": "1.45.6",
     "@tsconfig/node-lts": "22.0.2",
     "@types/node": "24.6.0",
-    "typescript": "5.9.2"
+    "typescript": "5.9.3"
   }
 }

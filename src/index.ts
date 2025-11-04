@@ -1,9 +1,5 @@
-import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import type { RspressPlugin } from "@rspress/shared";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 export const pluginFontFigtree = (): RspressPlugin => {
   return {
@@ -11,15 +7,13 @@ export const pluginFontFigtree = (): RspressPlugin => {
     builderConfig: {
       source: {
         preEntry: [
-          join(
-            __dirname,
-            "..",
-            "..",
-            "@fontsource-variable",
-            "figtree",
-            "index.css",
+          fileURLToPath(
+            new URL(
+              "../../@fontsource-variable/figtree/index.css",
+              import.meta.url,
+            ),
           ),
-          join(__dirname, "..", "static", "figtree.css"),
+          fileURLToPath(new URL("../static/figtree.css", import.meta.url)),
         ],
       },
       performance: {

@@ -116,10 +116,9 @@ This plugin currently relies on:
 
 ## Gotchas
 
-1. The plugin uses `__dirname` workaround for ESM compatibility
-2. Font files are loaded from `node_modules/@fontsource-variable/figtree/`
-3. Preloading configuration is crucial for preventing font flickering
-4. The plugin must be compatible with Rspress's builder configuration API
+1. Font files are loaded from `node_modules/@fontsource-variable/figtree/`
+2. Preloading configuration is crucial for preventing font flickering
+3. The plugin must be compatible with Rspress's builder configuration API
 
 ## References
 

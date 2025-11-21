@@ -46,7 +46,7 @@
     "@biomejs/biome": "2.3.6",
     "@rslib/core": "0.17.2",
     "@rspress/shared": "1.46.1",
-    "@tsconfig/node-lts": "22.0.3",
+    "@tsconfig/node-lts": "22.0.4",
     "@types/node": "24.10.1",
     "typescript": "5.9.3"
   }

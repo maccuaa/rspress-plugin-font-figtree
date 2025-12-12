@@ -35,7 +35,6 @@
   ],
   "scripts": {
     "build": "rslib build",
-    "bump": "bunx bumpp",
     "dev": "rslib build --watch",
     "lint": "biome ci ."
   },

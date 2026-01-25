@@ -46,7 +46,7 @@
     "@rslib/core": "0.19.3",
     "@rspress/shared": "1.47.0",
     "@tsconfig/node-lts": "24.0.0",
-    "@types/node": "25.0.9",
+    "@types/node": "25.0.10",
     "typescript": "5.9.3"
   }
 }

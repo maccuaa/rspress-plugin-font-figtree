@@ -10,7 +10,7 @@
       "devDependencies": {
         "@biomejs/biome": "2.5.4",
         "@rslib/core": "0.23.2",
-        "@rspress/shared": "2.0.17",
+        "@rspress/shared": "2.0.18",
         "@tsconfig/node-lts": "24.0.0",
         "@types/node": "26.1.1",
         "typescript": "7.0.2",
@@ -98,7 +98,7 @@
 
     "@rspack/core": ["@rspack/core@2.1.2", "", { "dependencies": { "@rspack/binding": "2.1.2" }, "peerDependencies": { "@module-federation/runtime-tools": "^0.24.1 || ^2.0.0", "@swc/helpers": "^0.5.23" }, "optionalPeers": ["@module-federation/runtime-tools", "@swc/helpers"] }, "sha512-crpNQKhHfnzrIl4Sa4fjH30Ho5aAPgyqpmJZ41SkUFOzyKHdZKYfE5LF3CMh7MiFQFPPxiiKf5BcpxmtZZx4MQ=="],
 
-    "@rspress/shared": ["@rspress/shared@2.0.17", "", { "dependencies": { "@rsbuild/core": "^2.1.5", "@shikijs/rehype": "^4.2.0", "unified": "^11.0.5" } }, "sha512-ZzpZ4hm5svgwU0w5CpTLZy4vFD3uPo8+gXtWMOREYMzwfzJeHqwOyXwxHf6byGpx85mVK5DQqMDi61meAS7ZUw=="],
+    "@rspress/shared": ["@rspress/shared@2.0.18", "", { "dependencies": { "@rsbuild/core": "^2.1.5", "@shikijs/rehype": "^4.2.0", "unified": "^11.0.5" } }, "sha512-GJswqJQCPSxvBt5r+gJzz8Em8EEK/sOmCQjTpemTvldvxr1Lva85BGVnSQZOgofnM0nrjt18kn4mmnuuSstbpA=="],
 
     "@shikijs/core": ["@shikijs/core@4.3.1", "", { "dependencies": { "@shikijs/primitive": "4.3.1", "@shikijs/types": "4.3.1", "@shikijs/vscode-textmate": "^10.0.2", "@types/hast": "^3.0.4", "hast-util-to-html": "^9.0.5" } }, "sha512-ANMDxuaPsNMdDC1m4vfvhlDmJweMwkE5XitTwrq2rWHx5jM+dlm4MmHt2PP6t0uejfR77SuhrhJ0zEijIF/uhA=="],
 

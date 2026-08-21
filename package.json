@@ -42,7 +42,7 @@
     "@fontsource-variable/figtree": "^5.2.8"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.8",
+    "@biomejs/biome": "2.5.9",
     "@rslib/core": "0.23.2",
     "@rspress/shared": "2.0.19",
     "@tsconfig/node-lts": "24.0.1",

@@ -10,7 +10,7 @@
       "devDependencies": {
         "@biomejs/biome": "2.5.10",
         "@rslib/core": "0.23.2",
-        "@rspress/shared": "2.0.20",
+        "@rspress/shared": "2.0.21",
         "@tsconfig/node-lts": "24.0.1",
         "@types/node": "26.4.0",
         "typescript": "7.0.2",
@@ -102,7 +102,7 @@
 
     "@rspack/core": ["@rspack/core@2.1.10", "", { "dependencies": { "@rspack/binding": "2.1.10" }, "peerDependencies": { "@module-federation/runtime-tools": "^0.24.1 || ^2.0.0", "@swc/helpers": "^0.5.23" }, "optionalPeers": ["@module-federation/runtime-tools", "@swc/helpers"] }, "sha512-YSS2/Xxz8uiG/KXDkqOoA3dTetNo/vysk7bAexQOrU8iuq7JuzDTTAwLKvWZnwmvME8M8m5wcM4YvfIwYmidHA=="],
 
-    "@rspress/shared": ["@rspress/shared@2.0.20", "", { "dependencies": { "@rsbuild/core": "^2.1.13", "@shikijs/rehype": "^4.2.0", "@types/react": "^19.2.18", "mdast-util-mdx-jsx": "^3.2.0", "unified": "^11.0.5" } }, "sha512-+e55crMZom5BQLgebrT4Pz4Zg0P7JIsYnDz4Ey65CTloFhfan1rARQpgb74b2bf5kKv/sPbPw6pfD8Fu74mCPQ=="],
+    "@rspress/shared": ["@rspress/shared@2.0.21", "", { "dependencies": { "@rsbuild/core": "^2.1.13", "@shikijs/rehype": "^4.2.0", "@types/react": "^19.2.18", "mdast-util-mdx-jsx": "^3.2.0", "unified": "^11.0.5" } }, "sha512-siCWkv1a4n6y7JdVRII+fwCRZGZtG5KGFfKi2w/Tt33UnIgh4XGqozZ5F/K0iZ/QUwg0wi93SoVdOQm2Q+wf8w=="],
 
     "@shikijs/core": ["@shikijs/core@4.4.3", "", { "dependencies": { "@shikijs/primitive": "4.4.3", "@shikijs/types": "4.4.3", "@shikijs/vscode-textmate": "^10.0.2", "@types/hast": "^3.0.5", "hast-util-to-html": "^9.0.5" } }, "sha512-QCR4q2ZO/ILJEuwiBMel4wdcTDb1JGwfjKTxPDF6x8ixOaluPrVqIn06C99AcRPhmYlBR56d/Fb+GN58GzExpg=="],
 

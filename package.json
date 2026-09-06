@@ -19,6 +19,7 @@
     "figtree"
   ],
   "type": "module",
+  "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -47,6 +48,7 @@
     "@rspress/shared": "2.0.21",
     "@tsconfig/node-lts": "24.0.1",
     "@types/node": "26.4.1",
+    "rsbuild-plugin-publint": "1.0.0",
     "typescript": "7.0.2"
   }
 }

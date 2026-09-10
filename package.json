@@ -47,7 +47,7 @@
     "@rslib/core": "1.0.0",
     "@rspress/shared": "2.0.21",
     "@tsconfig/node-lts": "24.0.1",
-    "@types/node": "26.4.1",
+    "@types/node": "26.5.0",
     "rsbuild-plugin-publint": "1.0.0",
     "typescript": "7.0.2"
   }

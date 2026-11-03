@@ -41,13 +41,15 @@ yarn add rspress-plugin-font-figtree -D
 Add the plugin to your `rspress.config.ts`:
 
 ```ts
-import { defineConfig } from "rspress/config";
+import { defineConfig } from "@rspress/core";
 import { pluginFontFigtree } from "rspress-plugin-font-figtree";
 
 export default defineConfig({
   plugins: [pluginFontFigtree()],
 });
 ```
+
+This plugin requires Rspress 2. On Rspress 1.x, use `rspress-plugin-font-figtree@1`.
 
 That's it! Figtree will now be used as the default font throughout your Rspress site.
 
@@ -61,8 +63,8 @@ This plugin automatically:
 
 ## Requirements
 
-- **Rspress**: `^1.0.0` or higher
-- **Node.js**: `^18.0.0` or higher
+- **Rspress**: 2.x. On Rspress 1.x, use `rspress-plugin-font-figtree@1`.
+- **Node.js**: whatever Rspress 2 requires (`^20.19.0 || >=22.12.0`).
 
 ## Troubleshooting
 
@@ -107,7 +109,7 @@ bun run lint
 
 Looking for other font plugins? Check out:
 
-- [rspress-plugin-font-open-sans](https://github.com/rspress-contrib/rspress-plugin-font-open-sans)
+- [rspress-plugin-font-open-sans](https://github.com/rstackjs/rspress-plugin-font-open-sans)
 
 ## License
 

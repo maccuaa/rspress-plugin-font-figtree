@@ -91,7 +91,6 @@ The plugin (`src/index.ts`) exports a `pluginFontFigtree` function that returns 
 
 - This project uses Release Please (`.github/workflows/release-please.yml`)
 - Version bumps are automated via conventional commits
-- Manual version bumps: `bun run bump`
 
 ### Dependencies
 

@@ -14,7 +14,7 @@ This is an Rspress plugin that integrates the Figtree font family into Rspress w
 - **Linter/Formatter**: Biome
 - **Testing**: Bun test runner with an Rspress fixture site
 - **Font Source**: @fontsource-variable/figtree
-- **Target Framework**: Rspress
+- **Target Framework**: Rspress 2 (peer dependency `@rspress/core@^2.0.0`)
 
 ## Project Structure
 
@@ -27,6 +27,7 @@ This is an Rspress plugin that integrates the Figtree font family into Rspress w
 ├── dist/                  # Build output (generated)
 ├── test/
 │   ├── build.test.ts      # Integration test: builds the fixture site with the plugin
+│   ├── types.test.ts      # Checks the published type declarations
 │   └── fixture/           # Minimal Rspress site that imports the built plugin
 ├── biome.json             # Biome configuration
 ├── rslib.config.ts        # Rslib build configuration
@@ -72,7 +73,7 @@ The test runs `rspress build`, so it needs a Node.js version supported by Rspres
 
 ### Plugin Architecture
 
-The plugin (`src/index.ts`) exports a `pluginFontFigtree` function that returns an `RspressPlugin` object. It configures:
+The plugin (`src/index.ts`) exports a `pluginFontFigtree` function that returns an `RspressPlugin` object (the type comes from the `@rspress/core` peer dependency). It configures:
 
 1. **Font Loading**: Loads the Figtree variable font from `@fontsource-variable/figtree`
 2. **Custom CSS**: Applies custom styling from `static/figtree.css`
@@ -108,7 +109,7 @@ The plugin (`src/index.ts`) exports a `pluginFontFigtree` function that returns 
 ### Dependencies
 
 - Keep `@fontsource-variable/figtree` updated for latest font versions
-- Ensure `@rspress/shared` version compatibility with target Rspress versions
+- `@rspress/core` is a peer dependency (`^2.0.0`, so only Rspress 2 is supported) and a pinned devDependency (used for the `RspressPlugin` type and the integration test). Change the peer range only when moving to a new Rspress major, as a breaking change
 - All other dependencies are dev-only
 
 ## Coding Standards
@@ -125,11 +126,13 @@ This plugin is covered by an integration test (`test/build.test.ts`, run with `b
 - Builds a minimal Rspress 2.x site (`test/fixture`) whose config imports the built `dist/`
 - Checks the emitted font files, preload tags, `@font-face` rules and the `--rp-font-family-base` override
 
+A second test (`test/types.test.ts`) checks that every package imported by the published `dist/index.d.ts` is a declared dependency or peer, and that Rspress's `defineConfig` accepts the plugin.
+
 Beyond that, it relies on:
 
 - Build-time validation (TypeScript compilation, publint in CI)
 - Runtime testing in actual Rspress projects
-- Rspress 1.x is not covered by CI
+- Rspress 1.x is not supported (stay on `rspress-plugin-font-figtree@1`)
 - No unit test framework is configured
 
 ## Gotchas
@@ -137,6 +140,7 @@ Beyond that, it relies on:
 1. The Figtree CSS and font files come from `@fontsource-variable/figtree`, located with Node module resolution (`require.resolve`) so nested, pnpm and linked installs all work. Never derive its path from the plugin's own location
 2. Preloading configuration is crucial for preventing font flickering
 3. The plugin must be compatible with Rspress's builder configuration API
+4. Every package imported by `dist/index.d.ts` must be a declared `dependency` or `peerDependency`: consumers under strict package managers (e.g. `pnpm --hoist=false`) cannot resolve anything else. `test/types.test.ts` enforces this
 
 ## References
 

@@ -12,6 +12,7 @@ This is an Rspress plugin that integrates the Figtree font family into Rspress w
 - **Build Tool**: Rslib
 - **Package Manager**: npm/bun
 - **Linter/Formatter**: Biome
+- **Testing**: Bun test runner with an Rspress fixture site
 - **Font Source**: @fontsource-variable/figtree
 - **Target Framework**: Rspress
 
@@ -24,6 +25,9 @@ This is an Rspress plugin that integrates the Figtree font family into Rspress w
 ├── static/
 │   └── figtree.css        # Custom font CSS configurations
 ├── dist/                  # Build output (generated)
+├── test/
+│   ├── build.test.ts      # Integration test: builds the fixture site with the plugin
+│   └── fixture/           # Minimal Rspress site that imports the built plugin
 ├── biome.json             # Biome configuration
 ├── rslib.config.ts        # Rslib build configuration
 ├── tsconfig.json          # TypeScript configuration
@@ -56,6 +60,14 @@ bun run build        # Production build
 bun run lint         # Run Biome checks
 ```
 
+### Testing
+
+```bash
+bun run test         # Build the plugin, then build the fixture site and check its output
+```
+
+The test runs `rspress build`, so it needs a Node.js version supported by Rspress 2 (`^20.19.0 || >=22.12.0`).
+
 ## Key Implementation Details
 
 ### Plugin Architecture
@@ -85,6 +97,7 @@ The plugin (`src/index.ts`) exports a `pluginFontFigtree` function that returns 
 
 - Run `bun run build` to verify builds successfully
 - Run `bun run lint` to ensure code quality
+- Run `bun run test` to build the fixture site with the plugin and check the output
 - Test in a sample Rspress project by installing locally
 
 ### Publishing
@@ -107,15 +120,21 @@ The plugin (`src/index.ts`) exports a `pluginFontFigtree` function that returns 
 
 ## Testing Strategy
 
-This plugin currently relies on:
+This plugin is covered by an integration test (`test/build.test.ts`, run with `bun test`) that:
 
-- Build-time validation (TypeScript compilation)
+- Builds a minimal Rspress 2.x site (`test/fixture`) whose config imports the built `dist/`
+- Checks the emitted font files, preload tags, `@font-face` rules and the `--rp-font-family-base` override
+
+Beyond that, it relies on:
+
+- Build-time validation (TypeScript compilation, publint in CI)
 - Runtime testing in actual Rspress projects
-- No unit test framework is currently configured
+- Rspress 1.x is not covered by CI
+- No unit test framework is configured
 
 ## Gotchas
 
-1. Font files are loaded from `node_modules/@fontsource-variable/figtree/`
+1. The Figtree CSS and font files come from `@fontsource-variable/figtree`, located with Node module resolution (`require.resolve`) so nested, pnpm and linked installs all work. Never derive its path from the plugin's own location
 2. Preloading configuration is crucial for preventing font flickering
 3. The plugin must be compatible with Rspress's builder configuration API
 

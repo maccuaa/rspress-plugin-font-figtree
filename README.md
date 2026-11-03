@@ -103,6 +103,9 @@ bun run dev
 
 # Run linting
 bun run lint
+
+# Run the integration test (builds the plugin, then a fixture Rspress site)
+bun run test
 ```
 
 ## Related

@@ -37,7 +37,8 @@
   "scripts": {
     "build": "rslib build",
     "dev": "rslib build --watch",
-    "lint": "biome ci ."
+    "lint": "biome ci .",
+    "test": "rslib build && bun test"
   },
   "dependencies": {
     "@fontsource-variable/figtree": "^5.2.8"
@@ -45,6 +46,7 @@
   "devDependencies": {
     "@biomejs/biome": "2.6.4",
     "@rslib/core": "1.0.5",
+    "@rspress/core": "2.1.0",
     "@rspress/shared": "2.0.23",
     "@tsconfig/node-lts": "24.0.1",
     "@types/node": "26.6.6",

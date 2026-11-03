@@ -9,7 +9,7 @@ Use Figtree as the default font in your Rspress website.
 
 - 🚀 Automatic font loading via [@fontsource-variable/figtree](https://fontsource.org/fonts/figtree)
 - ⚡ Smart preloading to prevent FOUT (Flash of Unstyled Text)
-- 🎨 Variable font support for flexible typography
+- 🎨 Variable font support for flexible typography, including true italics
 - 📦 Zero configuration required
 
 ## About
@@ -57,9 +57,9 @@ That's it! Figtree will now be used as the default font throughout your Rspress 
 
 This plugin automatically:
 
-1. **Loads the Figtree variable font** from `@fontsource-variable/figtree`
+1. **Loads the Figtree variable font** (upright and italic) from `@fontsource-variable/figtree`
 2. **Applies custom CSS styling** to set Figtree as the default font family
-3. **Configures font preloading** to ensure `.woff2` files load immediately, preventing font flickering
+3. **Preloads the main font file** (Latin, upright) so body text renders in Figtree right away. The other subsets (Latin Extended, italics) are loaded by the browser only when a page uses them
 
 ## Requirements
 
@@ -82,6 +82,21 @@ If you see a flash of unstyled text, the preloading configuration may not be wor
 
 - You're using a custom build configuration that overrides the plugin's settings
 - There's a version mismatch with Rspress
+
+### Accented characters flash in a fallback font
+
+Only the Latin upright font is preloaded. Pages that use Latin Extended characters (for example Polish, Czech, Romanian or Vietnamese) fetch that subset on demand, so those characters can briefly render in a fallback font. To preload it as well, add this to your `rspress.config.ts`:
+
+```ts
+export default defineConfig({
+  plugins: [pluginFontFigtree()],
+  builderConfig: {
+    performance: {
+      preload: { include: [/figtree-latin-ext-wght-normal/] },
+    },
+  },
+});
+```
 
 ## Development
 

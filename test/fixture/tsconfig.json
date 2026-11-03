@@ -3,5 +3,5 @@
   "compilerOptions": {
     "noEmit": true
   },
-  "include": ["rspress.config.ts"]
+  "include": ["rspress*.config.ts"]
 }

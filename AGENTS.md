@@ -75,9 +75,9 @@ The test runs `rspress build`, so it needs a Node.js version supported by Rspres
 
 The plugin (`src/index.ts`) exports a `pluginFontFigtree` function that returns an `RspressPlugin` object (the type comes from the `@rspress/core` peer dependency). It configures:
 
-1. **Font Loading**: Loads the Figtree variable font from `@fontsource-variable/figtree`
+1. **Font Loading**: Loads the Figtree variable font (upright and italic) from `@fontsource-variable/figtree`
 2. **Custom CSS**: Applies custom styling from `static/figtree.css`
-3. **Performance**: Preloads `.woff2` font files to prevent FOUT (Flash of Unstyled Text)
+3. **Performance**: Preloads only the Latin upright `.woff2` file to reduce FOUT (Flash of Unstyled Text). The other subsets (Latin Extended, italics) load on demand through `unicode-range`; preloading them would download them on every page. Sites that want more can extend `builderConfig.performance.preload.include` (documented in the README and covered by `test/fixture/rspress.preload-latin-ext.config.ts`)
 
 ### Build Configuration
 
@@ -125,6 +125,7 @@ This plugin is covered by an integration test (`test/build.test.ts`, run with `b
 
 - Builds a minimal Rspress 2.x site (`test/fixture`) whose config imports the built `dist/`
 - Checks the emitted font files, preload tags, `@font-face` rules and the `--rp-font-family-base` override
+- Builds the same site with the README's preload override to check it still works
 
 A second test (`test/types.test.ts`) checks that every package imported by the published `dist/index.d.ts` is a declared dependency or peer, and that Rspress's `defineConfig` accepts the plugin.
 

@@ -13,14 +13,16 @@ export const pluginFontFigtree = (): RspressPlugin => {
       source: {
         preEntry: [
           require.resolve("@fontsource-variable/figtree/index.css"),
+          require.resolve("@fontsource-variable/figtree/wght-italic.css"),
           path.join(currentDirectory, "../static/figtree.css"),
         ],
       },
       performance: {
-        // Preload fonts to avoid flickering caused by fonts swap
+        // Preload only the main upright subset to avoid flickering caused by font swap.
+        // The other subsets (Latin Extended, italics) are fetched on demand.
         preload: {
           type: "all-chunks",
-          include: [/figtree-.*\.woff2?/],
+          include: [/figtree-latin-wght-normal.*\.woff2/],
         },
       },
     },
